@@ -22,9 +22,5 @@ deploy:
     steps:
         - heroku-deploy
         - script:
-            name: echo database.yml
-            code: cat config/database.yml
-        - script:
             name: Update database
-            code: bundle exec rake db:migrate
-
+            code: heroku run rake db:migrate --app $APP_NAME
