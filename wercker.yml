@@ -22,4 +22,6 @@ deploy:
     steps:
         - heroku-deploy:
             install-toolbelt: true
-            run: run:detached rake db:migrate
+        - script: 
+            name: Update database
+            code: heroku run:detached rake db:migrate
