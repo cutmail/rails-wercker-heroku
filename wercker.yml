@@ -22,4 +22,4 @@ deploy:
     steps:
         - heroku-deploy:
             install-toolbelt: true
-            run: rake db:migrate
+            run: run:detached rake db:migrate
